@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "jsx": "react" // 이 부분을 추가
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"],
+  "plugins": ["@babel/plugin-transform-modules-commonjs"]
+}
