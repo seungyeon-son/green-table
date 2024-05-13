@@ -10,6 +10,7 @@ const Navigation = () => {
         <li>
           <Link to="/">Home</Link>
         </li>
+        {/* TODO: login, signUp 조건부 추가 필요 */}
         <li>
           <Link to="/login">Login</Link>
         </li>
