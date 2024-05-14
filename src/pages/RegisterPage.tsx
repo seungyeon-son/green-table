@@ -1,22 +1,25 @@
-import { auth } from "../firebase/auth/auth";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
+import app from "../firebase/auth";
 import React, { useState } from "react";
-const Login = () => {
+const auth = getAuth(app);
+
+function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleLogin = () => {
+  const handleSignUp = () => {
     auth
-      .signInWithEmailAndPassword(email, password)
+      .createUserWithEmailAndPassword(email, password)
       .then((userCredential: { user: any }) => {
-        // 로그인 성공 시 로직
+        // 회원가입 성공 시 로직
         const user = userCredential.user;
-        console.log("로그인 성공", user);
+        console.log("회원가입 성공", user);
       })
       .catch((error: { code: any; message: any }) => {
-        // 로그인 실패 시 오류 처리
+        // 회원가입 실패 시 오류 처리
         const errorCode = error.code;
         const errorMessage = error.message;
-        console.error("로그인 실패", errorCode, errorMessage);
+        console.error("회원가입 실패", errorCode, errorMessage);
       });
   };
 
@@ -24,9 +27,9 @@ const Login = () => {
     <div>
       <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
       <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-      <button onClick={handleLogin}>로그인</button>
+      <button onClick={handleSignUp}>회원가입</button>
     </div>
   );
-};
+}
 
-export default Login;
+export default SignUp;
