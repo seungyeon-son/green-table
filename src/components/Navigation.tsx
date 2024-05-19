@@ -12,7 +12,7 @@ const Navigation = () => {
         </li>
         {/* TODO: login, signUp 조건부 추가 필요 */}
         <li>
-          <Link to="/#">Menu</Link>
+          <Link to="/product">Product</Link>
         </li>
       </ul>
       <ul className="flex gap-4 text-sm">
