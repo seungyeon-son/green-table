@@ -43,3 +43,5 @@ export const fetchDataDetail = async (id: string): Promise<DataDetail> => {
   });
   return response.data;
 };
+console.log("API URL:", API_URL);
+console.log("API Key:", apiKey);
