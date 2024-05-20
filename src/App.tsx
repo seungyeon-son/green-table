@@ -5,6 +5,8 @@ import Navigation from "./components/Navigation";
 import Main from "./pages/MainPage";
 import Login from "./pages/LoginPage";
 import SignUp from "../src/pages/SignupPage";
+import Product from "../src/pages/ProductPage";
+import ProductDetail from "../src/pages/ProductDetailPage";
 
 const App: React.FC = () => {
   return (
@@ -15,6 +17,8 @@ const App: React.FC = () => {
           <Route index element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/product" element={<Product />} />
+          <Route path="/product/:id" element={<ProductDetail />} />
         </Routes>
       </div>
     </BrowserRouter>
